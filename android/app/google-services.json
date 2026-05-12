@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "361780455797",
+    "project_id": "neonmatch-8b6d1",
+    "storage_bucket": "neonmatch-8b6d1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361780455797:android:5c1ac3c32eaa8afd358b3c",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_21nwhPiHfmZtTr_eeHc_WyHgQzq8fI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
