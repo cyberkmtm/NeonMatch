@@ -1,27 +1,43 @@
-import 'package:flutter/material.dart';
+part of genz_app;
+
+class AppState extends ChangeNotifier {
+  ThemeMode themeMode = ThemeMode.dark;
+  void toggleTheme() {
+    themeMode = themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+    notifyListeners();
+  }
+}
+
+
+
+final appState = AppState();
+
 
 class AppTheme {
   static ThemeData get darkTheme => ThemeData(
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: const Color(0xFF0B0F1A),
+    scaffoldBackgroundColor: AppColors.darkBg,
+    primaryColor: AppColors.cyan,
     colorScheme: const ColorScheme.dark(
-      primary: Color(0xFF00F5FF),
-      secondary: Color(0xFF8A2BE2),
-      surface: Color(0xFF161B2B),
+      primary: AppColors.cyan,
+      secondary: AppColors.purple,
+      surface: AppColors.darkSurface,
     ),
-    useMaterial3: true,
+    textTheme: const TextTheme(bodyMedium: TextStyle(fontFamily: 'sans-serif')),
   );
-
   static ThemeData get lightTheme => ThemeData(
     brightness: Brightness.light,
-    scaffoldBackgroundColor: const Color(0xFFF8F9FA),
+    scaffoldBackgroundColor: AppColors.lightBg,
+    primaryColor: AppColors.blue,
     colorScheme: const ColorScheme.light(
-      primary: Color(
-        0xFF0066FF,
-      ), // Slightly darker blue for light mode visibility
-      secondary: Color(0xFF8A2BE2),
-      surface: Colors.white,
+      primary: AppColors.blue,
+      secondary: AppColors.purple,
+      surface: AppColors.lightSurface,
     ),
-    useMaterial3: true,
   );
 }
+
+
+
+bool isDark(BuildContext context) =>
+    Theme.of(context).brightness == Brightness.dark;
